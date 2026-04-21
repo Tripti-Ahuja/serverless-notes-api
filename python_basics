@@ -1,0 +1,62 @@
+from typing import Set
+
+
+name = "Tripti"        # str (text)
+age = 25               # int (whole number)
+price = 19.99          # float (decimal)
+is_active = True       # bool (True/False)
+
+list = [1, 2, 3, 4, 5]     # list (ordered collection)
+tuple = (1, 2, 3)           # tuple (ordered, immutable collection 
+Dict = {"name": "Tripti", "age": 25}  # dict (key-value pairs)
+Set = {1, 2, 3}             # set (unordered collection of unique items)
+
+"""Most important for AWS work: dict — because AWS services speak JSON, and dicts are Python's JSON"""
+
+note = {
+    "id": 1,
+    "title": "Learn Python",
+    "content": "Started today"
+}
+print(note["title"])   # → Learn Python
+
+
+'''Functions are reusable blocks of code that perform a specific task. They help us organize our code and avoid repetition. '''
+
+def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Tripti")
+print(message)   # → Hello, Tripti!
+
+
+'''If/ELSE Loops'''
+
+# If/else
+age = 20
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+# For loop
+for number in [1, 2, 3]:
+    print(number)
+
+# While loop
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+
+
+
+'''Classes are blueprints for creating objects. They encapsulate data and behavior together. In AWS, we often use classes to model our data and logic.  '''
+
+class Note:
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
+
+my_note = Note("Shopping", "Buy milk")
+print(my_note.title)   # → Shopping
