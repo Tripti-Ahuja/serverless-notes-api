@@ -45,6 +45,24 @@ class NotesStore:
             if note.note_id == note_id:
                 return note.to_dict()
         return None
+    def update(self, note_id: int, title: str = None, content: str = None) -> dict | None:
+        """Update a note's title and/or content. Returns the updated note, or None if not found."""
+        for note in self.notes:
+            if note.note_id == note_id:
+                if title is not None:
+                    note.title = title
+                if content is not None:
+                    note.content = content
+                return note.to_dict()
+        return None
+
+    def delete(self, note_id: int) -> bool:
+        """Delete a note by ID. Returns True if deleted, False if not found."""
+        for note in self.notes:
+            if note.note_id == note_id:
+                self.notes.remove(note)
+                return True
+        return False
 
 
 # Quick test — runs only when you execute this file directly
@@ -57,5 +75,20 @@ if __name__ == "__main__":
     for note in store.get_all():
         print(note)
 
-    print("\nNote with ID 1:")
-    print(store.get_by_id(1))
+    # Update note 1
+    print("\nUpdating note 1...")
+    updated = store.update(1, title="Updated title")
+    print(updated)
+
+    # Delete note 2
+    print("\nDeleting note 2...")
+    deleted = store.delete(2)
+    print(f"Deleted: {deleted}")
+
+    print("\nRemaining notes:")
+    for note in store.get_all():
+        print(note)
+
+    # Try deleting something that doesn't exist
+    print("\nTrying to delete note 99 (doesn't exist):")
+    print(f"Deleted: {store.delete(99)}")
