@@ -14,3 +14,9 @@
 - Implemented create, get_all, get_by_id
 - Learned: __init__, self, type hints, list comprehensions
 - Next: Add update and delete (the U and D in CRUD)
+
+## Day 3 — Completed ✅
+- Added update() and delete() methods
+- Full CRUD now working in memory
+- Learned: default parameters, `is not None`, graceful error handling
+- Next: Add input validation and write proper tests
