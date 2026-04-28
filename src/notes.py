@@ -1,5 +1,8 @@
 """Notes module — core CRUD logic."""
 from datetime import datetime
+class ValidationError(Exception):
+    """Raised when input data is invalid."""
+    pass
 
 
 class Note:
