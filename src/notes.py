@@ -79,26 +79,18 @@ class NotesStore:
 if __name__ == "__main__":
     store = NotesStore()
     store.create("First note", "Learning Python + AWS")
-    store.create("Shopping", "Milk, bread, eggs")
 
-    print("All notes:")
+    # Try invalid input — should raise ValidationError
+    try:
+        store.create("", "No title here")
+    except ValidationError as e:
+        print(f"Caught error: {e}")
+
+    try:
+        store.create("Valid title", "   ")  # whitespace-only content
+    except ValidationError as e:
+        print(f"Caught error: {e}")
+
+    print("\nAll notes:")
     for note in store.get_all():
         print(note)
-
-    # Update note 1
-    print("\nUpdating note 1...")
-    updated = store.update(1, title="Updated title")
-    print(updated)
-
-    # Delete note 2
-    print("\nDeleting note 2...")
-    deleted = store.delete(2)
-    print(f"Deleted: {deleted}")
-
-    print("\nRemaining notes:")
-    for note in store.get_all():
-        print(note)
-
-    # Try deleting something that doesn't exist
-    print("\nTrying to delete note 99 (doesn't exist):")
-    print(f"Deleted: {store.delete(99)}")
