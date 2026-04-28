@@ -1,5 +1,6 @@
 """Notes module — core CRUD logic."""
 from datetime import datetime
+from turtle import title
 class ValidationError(Exception):
     """Raised when input data is invalid."""
     pass
@@ -31,9 +32,15 @@ class NotesStore:
         self.notes = []
         self.next_id = 1
 
+
     def create(self, title: str, content: str) -> dict:
         """Create a new note and return it as a dict."""
-        note = Note(self.next_id, title, content)
+        if not title or not title.strip():
+            raise ValidationError("Title cannot be empty.")
+        if not content or not content.strip():
+            raise ValidationError("Content cannot be empty.")
+
+        note = Note(self.next_id, title.strip(), content.strip())
         self.notes.append(note)
         self.next_id += 1
         return note.to_dict()
