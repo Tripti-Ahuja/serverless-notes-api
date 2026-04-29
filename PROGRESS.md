@@ -20,3 +20,9 @@
 - Full CRUD now working in memory
 - Learned: default parameters, `is not None`, graceful error handling
 - Next: Add input validation and write proper tests
+
+## Day 4 — Completed ✅
+- Added ValidationError custom exception
+- Validated input in create() and update()
+- Learned: try/except, raise, defensive programming
+- Next: Write proper unit tests with pytest
