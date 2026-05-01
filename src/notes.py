@@ -1,6 +1,5 @@
 """Notes module — core CRUD logic."""
 from datetime import datetime
-from turtle import title
 class ValidationError(Exception):
     """Raised when input data is invalid."""
     pass
