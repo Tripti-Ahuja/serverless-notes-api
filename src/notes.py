@@ -22,6 +22,8 @@ class Note:
             "content": self.content,
             "created_at": self.created_at,
         }
+    def __str__(self) -> str:
+        return f"Note #{self.note_id}: {self.title}"
 
 
 class NotesStore:
@@ -31,6 +33,10 @@ class NotesStore:
         self.notes = []
         self.next_id = 1
 
+    def count(self) -> int:
+        """Return the total number of notes."""
+        return len(self.notes)
+    
 
     def create(self, title: str, content: str) -> dict:
         """Create a new note and return it as a dict."""
