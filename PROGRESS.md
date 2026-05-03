@@ -26,5 +26,6 @@
 - Validated input in create() — empty/whitespace titles and content now rejected
 - Removed accidental `turtle` auto-import (dead code cleanup)
 - Added count() method to NotesStore using built-in len()
+- Added __str__ method to Note for readable print output
 - Learned: try/except, raise, custom exceptions, defensive programming
 - Next: Learn about pytest and write proper unit tests
