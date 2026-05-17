@@ -1,8 +1,8 @@
-def product_by_n(n):
-    total = 1   
+def count_num(n):
+    total = 0   
     for i in range(1, n +1):
-        total *= i     
+        total += i     
     return total
 
-print(product_by_n(5))
+print(count_num(5))
     
