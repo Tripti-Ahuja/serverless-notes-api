@@ -1,8 +1,8 @@
-def sum_of_digits(num):
-    total = 0   
-    for char in str(num):
-        total += int(char)     
+def product_by_n(n):
+    total = 1   
+    for i in range(1, n +1):
+        total *= i     
     return total
 
-print(sum_of_digits(1234))
+print(product_by_n(5))
     
