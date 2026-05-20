@@ -1,8 +1,9 @@
-def count_num(n):
+def sum_of_odds(n):
     total = 0   
     for i in range(1, n +1):
-        total += i     
+        if i % 2 != 0:
+            total += i     
     return total
 
-print(count_num(5))
+print(sum_of_odds(10))
     
