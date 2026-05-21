@@ -1,9 +1,8 @@
-def sum_of_odds(n):
+def count_digits(num):
     total = 0   
-    for i in range(1, n +1):
-        if i % 2 != 0:
-            total += i     
+    for i in str(num):
+        total += int(i)     
     return total
 
-print(sum_of_odds(10))
+print(count_digits(1234))
     
