@@ -1,8 +1,8 @@
-def count_digits(num):
+def sum_between(a, b):
     total = 0   
-    for i in str(num):
-        total += 1     
+    for i in range(a, b+1):
+        total += i     
     return total
 
-print(count_digits(1234))
+print(sum_between(3, 7))
     
