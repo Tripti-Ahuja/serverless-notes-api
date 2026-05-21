@@ -1,8 +1,10 @@
-def sum_between(a, b):
-    total = 0   
-    for i in range(a, b+1):
-        total += i     
-    return total
+def largest_number(num):
+    largest = -1 
+    for i in str(num):
+        digit = int(i)
+        if digit > largest: 
+            largest = digit   
+    return largest
 
-print(sum_between(3, 7))
+print(largest_number(1934))
     
