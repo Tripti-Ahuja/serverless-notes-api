@@ -1,10 +1,10 @@
-def largest_number(num):
-    largest = -1 
+def smallest_number(num):
+    smallest = 9 
     for i in str(num):
         digit = int(i)
-        if digit > largest: 
-            largest = digit   
-    return largest
+        if digit < smallest: 
+            smallest = digit   
+    return smallest
 
-print(largest_number(1934))
+print(smallest_number(503))
     
