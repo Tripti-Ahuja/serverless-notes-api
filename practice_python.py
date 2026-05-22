@@ -1,11 +1,10 @@
-def largest_even_digit(num):
-    largest = -1 
+def smallest_digit(num):
+    smallest = 9 
     for i in str(num):
         digit = int(i)
-        if digit % 2 == 0:
-            if digit > largest:
-                largest = digit
-    return largest
+        if digit < smallest:
+            smallest = digit
+    return smallest
 
-print(largest_even_digit(1934))
+print(smallest_digit(503))
     
