@@ -1,10 +1,11 @@
-def smallest_digit(num):
-    smallest = 9 
+def smallest_odd_digit(num):
+    smallest = -1 
     for i in str(num):
         digit = int(i)
-        if digit < smallest:
-            smallest = digit
+        if digit % 2 != 0:
+            if smallest == -1 or digit < smallest:
+                smallest = digit
     return smallest
 
-print(smallest_digit(503))
+print(smallest_odd_digit(57391))
     
