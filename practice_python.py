@@ -7,5 +7,5 @@ def smallest_odd_digit(num):
                 smallest = digit
     return smallest
 
-print(smallest_odd_digit(57391))
+print(smallest_odd_digit(1934))
     
