@@ -1,17 +1,14 @@
-def second_largest_number(num):
-    largest = -1
-    second_largest = -1
+def smallest_digit_above_5(num):
+    smallest = 10
     for digit in str(num):
         digit = int(digit)
-        if digit > largest:
-            second_largest = largest
-            largest = digit
-        elif digit < largest and digit > second_largest:
-            second_largest = digit
-    return second_largest
+        if digit > 5 and digit < smallest:
+            smallest = digit
+    if smallest == 10:
+            return -1
+    return smallest
 
-
-print(second_largest_number(19345))
+print(smallest_digit_above_5(67890))
     
 
     
