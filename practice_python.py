@@ -1,14 +1,14 @@
-def smallest_digit_above_5(num):
-    smallest = 10
-    for digit in str(num):
-        digit = int(digit)
-        if digit > 5 and digit < smallest:
-            smallest = digit
-    if smallest == 10:
-            return -1
-    return smallest
-
-print(smallest_digit_above_5(67890))
+def classify_number(n):
+    if n == 0:
+        return "Zero"
+    elif n < 0:
+        return "negative"
+    elif n > 0 and n % 2 == 0:
+        return "positive even"
+    elif n > 0 and n % 2 != 0:
+        return "positive odd"
+    
+print(classify_number(2))
     
 
     
